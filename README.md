@@ -9,7 +9,7 @@ HTML5 / CSS3 기반 정적 멀티페이지 웹 사이트
 
 ## 🗺️ 사이트맵 및 정보 구조
 ```python
-📁 애니메이션 성지순례 가이드
+📁 AnimePilgrim
 ├── index.html    # 홈페이지
 ├── gallery.html  # 각종 성지순례 사진들
 ├── article.html  # 성지순례 팁
