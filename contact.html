@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의 - AnimePilgrim</title>
+    <link rel="stylesheet" href="css/style.css">
+            <style>
+            /* 다크 모드 및 폰트 설정 */
+            body.animepilgrim-theme {
+                font-family: 'One Mobile POP';
+                background-color: #91A1D4;
+                color: #ffffff;
+            }
+        </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>AnimePilgrim</h1>
+                    <p>https://AnimePilgrim.com</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="gallery.html">각종 성지순례 사진들</a></li>
+                    <li><a href="article.html">성지순례 팁</a></li>
+                    <li><a href="contact.html" class="active">문의</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>문의하기</h2>
+            <p>아래 양식을 작성해주세요. * 표시는 필수 항목입니다.</p>
+        </section>
+
+        <section class="contact-form-section">
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">이름 *</label>
+                    <input type="text" id="name" name="name" placeholder="홍길동" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">이메일 *</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                    <small>연락 가능한 이메일 주소를 입력해 주세요.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">메시지 *</label>
+                    <textarea id="message" name="message" rows="6" placeholder="문의 내용을 자세히 작성해 주세요." required></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="btn-submit">제출</button>
+                    <button type="reset" class="btn-reset">리셋</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <div class="contact-details">
+                <h3>연락처 정보</h3>
+                <p>성지순례에 관한 궁금한 점이나 제안사항이 있으시면 언제든지 연락해주세요.</p>
+                <div class="contact-item">
+                    <strong>웹사이트:</strong> https://AnimePilgrim.com
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <h3>AnimePilgrim</h3>
+                <p>https://AnimePilgrim.com</p>
+            </div>
+        </div>
+    </footer>
+        <script>
+            document.body.classList.add('animepilgrim-theme');
+        </script>
+</body>
+</html>
