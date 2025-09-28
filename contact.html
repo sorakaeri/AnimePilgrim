@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>문의 - AnimePilgrim</title>
+    <title>AnimePilgrim - 문의</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -26,29 +26,41 @@
     </header>
 
     <main>
-        <section class="page-header">
+        <section class="contact-form-section">
             <h2>문의하기</h2>
             <p>아래 양식을 작성해주세요. * 표시는 필수 항목입니다.</p>
-        </section>
-
-        <section class="contact-form-section">
+            <hr>
             <form class="contact-form" action="#" method="POST">
+                <!--이름 *-->
                 <div class="form-group">
                     <label for="name">이름 *</label>
-                    <input type="text" id="name" name="name" placeholder="홍길동" required>
+                    <input type="text" id="name" name="name" placeholder="홍길동" required minlength="2" pattern="[가-힣a-zA-Z\s]+" aria-describedby="name-help">
+                    <small id="name-help" class="help-text">한글 또는 영문으로 최소 2자 이상 입력해주세요.</small>
                 </div>
-
+                <!--이메일 *-->
                 <div class="form-group">
                     <label for="email">이메일 *</label>
-                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
-                    <small>연락 가능한 이메일 주소를 입력해 주세요.</small>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" aria-describedby="email-help">
+                    <small id="email-help" class="help-text">연락 가능한 이메일 주소를 입력해 주세요.</small>
+                </div> 
+                <!--연락 목적 *-->
+                <div class="form-group">
+                    <label for="purpose">연락 목적 *</label>
+                    <select id="purpose" name="purpose" aria-describedby="purpose-help">
+                        <option value="">선택해주세요</option>
+                        <option value="문의">문의</option>
+                        <option value="협업제안">협업제안</option>
+                        <option value="기타">기타</option>
+                    </select>
+                    <small id="purpose-help" class="help-text">연락하시는 목적을 선택해주세요.</small>
                 </div>
-
+                <!--메시지 *-->
                 <div class="form-group">
                     <label for="message">메시지 *</label>
-                    <textarea id="message" name="message" rows="6" placeholder="문의 내용을 자세히 작성해 주세요." required></textarea>
+                    <textarea id="message" name="message" rows="6" placeholder="문의 내용을 자세히 작성해 주세요." required minlength="10" aria-describedby="message-help"></textarea>
+                    <small id="message-help" class="help-text">최소 10자 이상 입력해주세요.</small>
                 </div>
-
+                <!--버튼-->
                 <div class="form-buttons">
                     <button type="submit" class="btn-submit">제출</button>
                     <button type="reset" class="btn-reset">리셋</button>
@@ -70,8 +82,9 @@
     <footer>
         <div class="footer-content">
             <div class="logo">
-                <h3>AnimePilgrim</h3>
-                <p>https://AnimePilgrim.com</p>
+                <p>© 2025 AnimePilgrim. All rights reserved.</p>
+                <p>본 사이트에 사용된 애니메이션 이미지 및 콘텐츠의 저작권은 각각의 제작사와 저작권자에게 있습니다.</p>
+                <p>All anime images and content used on this site are copyrighted by their respective creators and publishers.</p>
             </div>
         </div>
     </footer>

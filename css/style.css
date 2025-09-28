@@ -14,7 +14,7 @@ body {
 
 /* 헤더 및 네비게이션 */
 .navbar {
-    background-color: #88B6F2;
+    background: linear-gradient(to right, #91A1D4, #88B6F2);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
     position: sticky;
@@ -105,7 +105,7 @@ main {
     font-weight: 200;
 }
 
-/* 실제로 갔다온 작품들 section */
+/* 실제로 갔다온 작품들 및 각종 성지순례 사진들 section */
 .anime-gallery {
     background: #88B6F2;
     padding: 2rem;
@@ -120,19 +120,36 @@ main {
     color: #3E4759;
 }
 
-.anime-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+/*float은 요소 흐름을 변경해 좌우 배치*/
+/*inline-block은 줄바꿈 없는 인라인 배치*/
+
+/* Float 기반 가로 스크롤 컨테이너 */
+.anime-scroll-container {
+    overflow-x: auto;
+    white-space: nowrap; /* 줄바꿈 방지 */
+    padding: 20px 0;
+    
+    /* 스크롤바 스타일링 */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f1f1f1;
 }
 
-/* .anime-card {
-    background: #91A1D4;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Float 기반 가로 스크롤 그리드 */
+.anime-grid {
+    display: block;
+    font-size: 0; /* 인라인 요소 간 공백 제거 */
+}
+
+/* Float 카드 스타일 */
+.anime-card {
+    display: inline-block;
+    vertical-align: top;
+    width: 280px;
+    margin-right: 20px;
+    white-space: normal; /* 카드 내부는 정상 줄바꿈 */
+    font-size: 1rem; /* 폰트 크기 복원 */
     transition: transform 0.3s ease;
-} */
+}
 
 .anime-card:hover {
     transform: translateY(-5px);
@@ -164,20 +181,31 @@ main {
     color: #3E4759;
 }
 
-/* 가로 스크롤 그리드 */
+/* 스크롤바 웹킷 브라우저 스타일링 */
+.anime-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.anime-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.anime-scroll-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* Flexbox - 가장 간단한 가로 스크롤 */
 .anime-grid {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 280px; /* 고정 너비로 카드 크기 통일 */
-    gap: 20px;
+    display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    padding: 20px 0;
-    
-    /* 스크롤바 스타일링 */
-    scrollbar-width: thin;
-    scrollbar-color: #ccc #f1f1f1;
+    gap: 20px;
+}
+
+.anime-card {
+    flex: 0 0 280px;
 }
 
 /* 각종 성지순례 사진들 탭 */
@@ -214,7 +242,7 @@ main {
     margin-bottom: 1rem;
 }
 
-/* 연락처 폼 */
+/* 문의 section */
 .contact-form-section {
     background: #88B6F2;
     padding: 2rem;
@@ -240,7 +268,8 @@ main {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
@@ -250,7 +279,8 @@ main {
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
     outline: none;
     border-color: #007bff;
 }
@@ -303,6 +333,12 @@ main {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details h2 {
+    font-size: 1.5rem;
+    color: #3E4759;
+    margin-bottom: 1rem;
 }
 
 .contact-details h3 {
