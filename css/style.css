@@ -5,6 +5,27 @@
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* 네비게이션 포커스 강화 */
+.nav-menu li a:focus {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* 폼 요소 포커스 강화 */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border: 2px solid #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
 a {
     text-decoration: none;
 }
@@ -200,6 +221,31 @@ main {
 
 .anime-card {
     flex: 0 0 280px;
+}
+
+blockquote {
+    border-top : 2px solid #ccc;
+    border-bottom:2px solid #ccc;
+    margin: 10px;
+    margin: 10px;
+    padding: 10px;
+    color: #333;
+}
+
+table { 
+    border-collapse: collapse; width: 100%; 
+    color: #333;
+}
+
+th, td { 
+    padding: 10px; border: 1px solid #1f1e33; 
+}
+
+figcaption {
+    background-color: #91A1D4;
+    text-align: left;
+    padding: 4px;
+    color: #333;
 }
 
 /* 문의 section */
